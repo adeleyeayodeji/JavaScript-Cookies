@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cookies Test</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+	 <script>
+	 	function setCookie(cname, cvalue, exdays, path) {
+		  var d = new Date();
+		  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+		  var expires = "expires="+d.toUTCString();
+		  document.cookie = cname + "=" + cvalue + ";" + expires + ";path="+path;
+		  console.log("Cookies set", cname);
+		}
+
+		function getCookie(cname) {
+		  var name = cname + "=";
+		  var ca = document.cookie.split(';');
+		    var c = ca[0];
+		    if (c.indexOf(name) == 0) {
+		       console.log(c.substring(name.length, c.length));
+		       return c.substring(name.length, c.length);
+		    }
+		  return "";
+		}
+
+		function delete_cookie( name, path ) {
+		  if( getCookie( name ) ) {
+		    document.cookie = name + "=" +
+		      (";path="+path)+";expires=Thu, 01 Jan 1970 00:00:01 GMT";
+		  }
+		}
+
+		console.log(4**2); // 4 raised to power 2
+		console.log(10 % 2); // 2 Modulus of 10
+		console.log((2 < 4 ? true : false)); // ternary operator of 2 < 4
+		console.log(typeof "Boy"); // Returns the type of a variable or value
+		function Car(make, model, year) {
+		  this.make = make;
+		  this.model = model;
+		  this.year = year;
+		}
+		const auto = new Car('Honda', 'Accord', 1998);
+
+		console.log(auto instanceof Car);
+		// expected output: true
+
+		console.log(auto instanceof Object);
+		// expected output: true
+
+		//OOP JavaScript
+		class Animals {
+		//Constructor run automatically with asking for any permision
+	    constructor(name, specie) {
+	        this.name = name;
+	        this.specie = specie;
+	    }
+	    //Method of the class
+	    sing() {
+	        return `${this.name} can sing`;
+	    }
+	    //Method of the class
+	    dance() {
+	        return `${this.name} can dance`;
+		    }
+		}
+
+		class Abel {
+			 constructor(age, job) {
+		        this.age = age; //Property age
+		        this.job = job; //Property job
+		    }
+
+		    //Method to display Abel and Age
+		    displayAge(){
+		    	//Check if Abel Age is valid
+		    	if (this.age == 12) {
+		    		var show = "Abel Age is Valid \n";
+		    			  show += `Current age is ${this.age} \n`;
+		    			  show += `Current Job is ${this.job}`;
+		    			  //Returning the values for Abel
+		    		return show;
+		    	} else {
+		    		return "Abel Age is not valid";
+		    	}
+		    }
+		}
+		//Making an instance of a class Animal
+		let bingo = new Animals("Bingo", "Hairy");
+		//Log info
+		console.log(bingo.sing());
+
+		//Making an instance of Abel
+		var newlog = new Abel(12, "Coding");
+		console.log(newlog.displayAge());
+
+
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1>Pop Up Based</h1>
+			<button onclick="setCookie('username', 'adeleyeayodeji', 1, '/')">setCookie</button>
+			<button onclick="getCookie('username')">getCookie</button>
+			<button onclick="delete_cookie( 'username', '/' )">Delete Cookies</button>
+		</div>
+	</div>
+</body>
+</html>
